@@ -11,12 +11,13 @@
 - Директория food_shop:
 
 Реализация проекта магазина продуктов. 
-Суперюзер
-Электронная почта admin@admin.com
-Username admin_username
-Пароль admin_password
-Имя пользователя admin
-Фамилия admin
+Значения Суперюзер для проверки админ-зоны:
+
+Электронная почта - admin@admin.com 
+Username - admin_username 
+Пароль - admin_password 
+Имя - пользователя admin 
+Фамилия - admin
 
 Технологии
 ```
