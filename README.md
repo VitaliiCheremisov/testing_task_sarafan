@@ -16,8 +16,10 @@
 1) В корневом каталоге создать .env файл
 2) Описать переменные:
   * SECRET_KEY="'<ваш SECRET_KEY>'"
+
 Например SECRET_KET="'django-insecure-k21i13@3f^h'"
   * ALLOWED_HOSTS="'<ваши ALLLOWED_HOSTS>'"'
+
 Например ALLOWED_HOSTS="'localhost,web,127.0.0.1''"
 ```
 cd food_shop
