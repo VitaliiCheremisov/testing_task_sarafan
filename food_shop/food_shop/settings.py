@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'core',
     'users',
+    'categories',
 ]
 
 AUTH_USER_MODEL = 'users.CustomUser'
@@ -90,7 +91,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru-ru'
 
 TIME_ZONE = 'UTC'
 
