@@ -38,7 +38,6 @@ python3 manage.py runserver
   * DB_NAME=<>
   * DB_HOST=<>
   * DB_PORT=<>
-```
 
 Реализована авторизация пользователя 
 с применение Djoser.
