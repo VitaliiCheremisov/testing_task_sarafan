@@ -10,7 +10,35 @@
 
 ### Директория food_shop:
 
-Реализация проекта магазина продуктов. Реализована авторизация пользователя 
+Реализация проекта магазина продуктов.
+
+Для запуска проекта локально c БД sqlite3:
+1) В корневом каталоге создать .env файл
+2) Описать переменные:
+  SECRET_KEY="'<ваш SECRET_KEY>'"
+  * Например SECRET_KET="'django-insecure-k21i13@3f^h'"
+  ALLOWED_HOSTS="'<ваши ALLLOWED_HOSTS>'"'
+  * Например ALLOWED_HOSTS="'localhost,web,127.0.0.1''"
+```
+cd backend
+python3 manage.py runserver
+```
+
+Для запуска в Docker-контейнере с БД PostgreSQL:
+1) В корневом каталоге создать .env файл
+2) Описать переменные:
+  SECRET_KEY=<>
+  ALLOWED_HOSTS=<>
+  ENGINE=<>
+  POSTGRES_DB=<>
+  POSTGRES_USER=<>
+  POSTGRES_PASSWORD=<>
+  DB_NAME=<>
+  DB_HOST=<>
+  DB_PORT=<>
+```
+
+Реализована авторизация пользователя 
 с применение Djoser.
 
 Значения Суперюзера для проверки админ-зоны:

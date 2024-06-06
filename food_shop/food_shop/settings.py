@@ -66,8 +66,12 @@ WSGI_APPLICATION = 'food_shop.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': os.getenv('ENGINE', 'django.db.backends.sqlite3'),
+        'NAME': os.getenv('POSTGRES_DB', 'sqlite3'),
+        'USER': os.getenv('POSTGRES_USER', 'sqlite3'),
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD', 'qwerty'),
+        'HOST': os.getenv('DB_HOST', 'localhost'),
+        'PORT': os.getenv('DB_PORT', 5432)
     }
 }
 
