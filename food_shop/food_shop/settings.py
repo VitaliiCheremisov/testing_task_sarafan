@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'core',
     'users',
     'categories',
+    'products',
 ]
 
 AUTH_USER_MODEL = 'users.CustomUser'

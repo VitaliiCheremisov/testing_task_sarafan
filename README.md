@@ -50,6 +50,14 @@ python3 manage.py runserver
 - Имя пользователя: admin 
 - Фамилия: admin
 
+Реализованы эндпоинты:
+```
+/admin
+/auth/users
+/api/products
+/api/categories
+```
+
 Технологии
 ```
 Python 3.10
