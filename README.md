@@ -29,15 +29,15 @@ python3 manage.py runserver
 Для запуска в Docker-контейнере с БД PostgreSQL:
 1) В корневом каталоге создать .env файл
 2) Описать переменные:
-  SECRET_KEY=<>
-  ALLOWED_HOSTS=<>
-  ENGINE=<>
-  POSTGRES_DB=<>
-  POSTGRES_USER=<>
-  POSTGRES_PASSWORD=<>
-  DB_NAME=<>
-  DB_HOST=<>
-  DB_PORT=<>
+  * SECRET_KEY=<>
+  * ALLOWED_HOSTS=<>
+  * ENGINE=<>
+  * POSTGRES_DB=<>
+  * POSTGRES_USER=<>
+  * POSTGRES_PASSWORD=<>
+  * DB_NAME=<>
+  * DB_HOST=<>
+  * DB_PORT=<>
 ```
 
 Реализована авторизация пользователя 
