@@ -14,9 +14,13 @@
 Значения Суперюзер для проверки админ-зоны:
 
 Электронная почта - admin@admin.com 
+
 Username - admin_username 
+
 Пароль - admin_password 
+
 Имя - пользователя admin 
+
 Фамилия - admin
 
 Технологии
