@@ -16,7 +16,7 @@ router_v1.register('products', ProductViewSet, basename='products')
 api_patterns = [
     path('', include(router_v1.urls)),
     path('auth', include('djoser.urls.authtoken')),
-    path('/shopping_cart/<int:id>',
+    path('shopping_cart/<int:id>',
          ShoppingCartViewSet.as_view({'post': 'create', 'put': 'update', 'delete': 'destroy'}),
          name='shopping_cart'),
 ]

@@ -1,15 +1,22 @@
-from rest_framework import mixins, viewsets
+from rest_framework import viewsets
+from rest_framework.response import Response
 
 from products.models import Product
-from .serializers import ShoppingCartSerializer
+from .serializers import ShoppingCartSerializer, ShoppingCartSummarySerializer
 from .models import ShoppingCart
+from .utils import get_shopping_cart
 
 
 class ShoppingCartViewSet(viewsets.ModelViewSet):
     """Работа с корзиной."""
 
     queryset = ShoppingCart.objects.all()
-    serializer_class = ShoppingCartSerializer
+
+    def get_serializer_class(self):
+        """Выбор сериализатора в зависимости от запроса."""
+        if self.action == 'list':
+            return ShoppingCartSummarySerializer
+        return ShoppingCartSerializer
 
     def perform_create(self, serializer):
         """Метод внесения продукта в корзину."""
@@ -25,3 +32,9 @@ class ShoppingCartViewSet(viewsets.ModelViewSet):
     def perform_destroy(self, instance):
         """Метод удаления продукта из корзины."""
         instance.delete()
+
+    def list(self, request, *args, **kwargs):
+        """Метод вывода состава корзины."""
+        shopping_cart = get_shopping_cart(request.user)
+        serializer = self.serializer_class(shopping_cart)
+        return Response(serializer.data)
