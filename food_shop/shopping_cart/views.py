@@ -1,4 +1,4 @@
-from rest_framework import viewsets
+from rest_framework import status, viewsets
 from rest_framework.response import Response
 
 from products.models import Product
@@ -26,7 +26,8 @@ class ShoppingCartViewSet(viewsets.ModelViewSet):
     def perform_update(self, serializer):
         """Метод изменения количества продуктов в корзине."""
         instance = self.get_object()
-        instance.amount = serializer.validated_data.get('amount', instance.amount)
+        instance.amount = (serializer.validated_data.
+                           get('amount', instance.amount))
         instance.save()
 
     def perform_destroy(self, instance):
@@ -38,3 +39,9 @@ class ShoppingCartViewSet(viewsets.ModelViewSet):
         shopping_cart = get_shopping_cart(request.user)
         serializer = self.serializer_class(shopping_cart)
         return Response(serializer.data)
+
+    def clear(self, request, *args, **kwargs):
+        """Метод полной очистки корзины."""
+        ShoppingCart.objects.filter(user=request.user).delete()
+        return Response({'message': 'Корзина очищена'},
+                        status=status.HTTP_204_NO_CONTENT)
