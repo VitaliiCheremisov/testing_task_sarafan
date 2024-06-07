@@ -56,6 +56,7 @@ python3 manage.py runserver
 /auth/users
 /api/products
 /api/categories
+/api/shopping_cart/<int:id>
 ```
 
 Технологии
